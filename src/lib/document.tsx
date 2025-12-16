@@ -3,10 +3,10 @@ import type { ReactNode } from "react";
 
 export const RootDocument = ({
   children,
-  lang,
-}: Readonly<{ children: ReactNode; lang: string }>) => {
+  language,
+}: Readonly<{ children: ReactNode; language: string }>) => {
   return (
-    <html lang={lang}>
+    <html lang={language}>
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />

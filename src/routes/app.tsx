@@ -1,14 +1,14 @@
-import { RootDocument } from "@/lib/document";
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-const RouteComponent = () => {
-  const languageRetrievedFromUserData = "en-US";
+const RouteComponent = () => <Outlet />;
 
-  return (
-    <RootDocument lang={languageRetrievedFromUserData}>
-      <Outlet />
-    </RootDocument>
-  );
-};
+export const Route = createFileRoute("/app")({
+  component: RouteComponent,
+  loader: () => {
+    const languageFromDatabase = "pl-PL";
 
-export const Route = createFileRoute("/app")({ component: RouteComponent });
+    return {
+      language: languageFromDatabase,
+    } as const;
+  },
+});
